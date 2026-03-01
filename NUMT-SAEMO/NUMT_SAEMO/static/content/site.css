@@ -1,0 +1,46 @@
+/* Prevent content from hiding under navbar */
+body {
+    padding-top: 50px; /* navbar height */
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 50px; /* below navbar */
+    bottom: 0;
+    left: 0;
+    width: 220px;
+    padding: 20px;
+    background-color: #222;
+    overflow-y: auto;
+}
+
+    /* Sidebar links */
+    .sidebar .nav > li > a {
+        color: #ccc;
+    }
+
+        .sidebar .nav > li > a:hover {
+            background-color: #080808;
+            color: white;
+        }
+
+/* Content area */
+.content-area {
+    margin-left: 240px;
+    padding: 20px;
+}
+
+/* Responsive behavior */
+@media (max-width: 768px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .content-area {
+        margin-left: 0;
+    }
+}

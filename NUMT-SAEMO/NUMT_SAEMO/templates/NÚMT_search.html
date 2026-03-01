@@ -1,0 +1,20 @@
+﻿{% extends "NÚMT_layout.html" %}
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Vyhľadávanie</h1>
+    <form method="POST">
+        <input type="number" name="subject" placeholder="ZADAJTE ID">
+        <button type="submit">Save</button>
+    </form>
+
+    {% if subject %}
+    <p>ZOBRAZUJÚ SA VÝSLEDKY VYHĽADÁVANIA PRE: {{ subject }}</p>
+    {% endif %}
+
+</div>
+
+
+
+{% endblock %}
