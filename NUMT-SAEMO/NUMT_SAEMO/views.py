@@ -21,7 +21,7 @@ from NUMT_SAEMO import app
 
 
 @app.route('/')
-@app.route('/home')
+@app.route('/SAEMO')
 def home():
     """Renders the home page."""
     return render_template(
