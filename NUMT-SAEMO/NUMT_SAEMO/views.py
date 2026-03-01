@@ -41,7 +41,7 @@ def NÚMT():
         year=datetime.now().year,
     )
 
-@app.route('/Vyhľadávanie', methods=["GET", "POST"])
+@app.route('/NÚMT/Vyhľadávanie', methods=["GET", "POST"])
 def NÚMT_search():
     if request.method == "POST":
         subject = request.form.get("subject")
@@ -53,7 +53,7 @@ def NÚMT_search():
         year=datetime.now().year,
         subject=session.get("subject")
     )
-@app.route('/Popis')
+@app.route('/NÚMT/Popis')
 
 def RESULT_description():
      
@@ -65,7 +65,7 @@ def RESULT_description():
         subject=session.get("subject"),
         searchtype = "ZOBRAZUJE SA POPIS"
       )
-@app.route('/Vlastnosti')
+@app.route('/NÚMT/Vlastnosti')
 
 def RESULT_parameters():
      
@@ -77,7 +77,7 @@ def RESULT_parameters():
         subject=session.get("subject"),
         searchtype = "ZOBRAZUJÚ SA VLASTNOSTI"
       )
-@app.route('/Merania')
+@app.route('/NÚMT/Merania')
 
 def RESULT_measurements():
      
