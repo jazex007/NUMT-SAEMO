@@ -8,14 +8,11 @@ from flask import render_template
 from flask import request
 from flask import redirect, url_for
 from flask import Flask, jsonify
-from NUMT_SAEMO import SCHEDULE_SERVER
-from NUMT_SAEMO.verify_user import verify
-from .verify_user import verify
+
 from flask import request, session
 
 from NUMT_SAEMO import app
-
-
+from NUMT_SAEMO.db import get_athing
 
 
 
@@ -56,14 +53,15 @@ def NÚMT_search():
 @app.route('/NÚMT/Popis')
 
 def RESULT_description():
-     
+    description = get_athing("objects", session.get("subject"), "description") 
 
     return render_template(
         'NÚMT_result.html',
         title='NÚMT-Vyhľadávanie',
         year=datetime.now().year,
         subject=session.get("subject"),
-        searchtype = "ZOBRAZUJE SA POPIS"
+        searchtype = "ZOBRAZUJE SA POPIS",
+        text = description
       )
 @app.route('/NÚMT/Vlastnosti')
 
